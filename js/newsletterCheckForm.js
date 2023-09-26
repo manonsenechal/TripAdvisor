@@ -18,6 +18,10 @@ function handleNewsletterSubmit(evt){
             // on selectionne l'élément dans lequel on veut ajouter le paragraphe
             const newsletterPopUpElement = document.querySelector('.newsletter');
             newsletterPopUpElement.append(newParagraphElement);
+
+            //setTimeout supprime le message après 3secondes
+
+            setTimeout(function(){newParagraphElement.remove()}, 3000);
         }
 }
 
