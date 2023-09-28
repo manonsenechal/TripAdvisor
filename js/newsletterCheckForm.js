@@ -1,6 +1,4 @@
 function handleNewsletterSubmit(evt){
-    // on empêche le rechargement de la page 
-    evt.preventDefault();
 
     //sélection du champ input (ou l'utilisateur saisi son mail)
     const emailInputElement = document.getElementById('subscriber-email');
@@ -9,8 +7,11 @@ function handleNewsletterSubmit(evt){
 
     //si c'est un email interdit 
     if (isForbiddenEmail(email)) {
-            //on affiche un message d'erreur 
 
+            // on empêche le rechargement de la page 
+            evt.preventDefault();
+
+            //on affiche un message d'erreur 
             const newsletterPopUpElement = document.querySelector('.newsletter');
             messages.addMessageToElement("Merci de saisir une adresse mail valide.", newsletterPopUpElement);
             
