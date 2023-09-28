@@ -9,19 +9,14 @@ function handleNewsletterSubmit(evt){
 
     //si c'est un email interdit 
     if (isForbiddenEmail(email)) {
-            //on affiche un message d'erreur donc on crée un élément paragraphe
-            const newParagraphElement = document.createElement('p');
-            //on ajoute la classe message 
-            newParagraphElement.classList.add('message');
-            //on modofie le contenu interne
-            newParagraphElement.textContent = "les adresses jetables ne sont pas autorisées.";
-            // on selectionne l'élément dans lequel on veut ajouter le paragraphe
-            const newsletterPopUpElement = document.querySelector('.newsletter');
-            newsletterPopUpElement.append(newParagraphElement);
+            //on affiche un message d'erreur 
 
+            const newsletterPopUpElement = document.querySelector('.newsletter');
+            messages.addMessageToElement("Merci de saisir une adresse mail valide.", newsletterPopUpElement);
+            
             //setTimeout supprime le message après 3secondes
 
-            setTimeout(function(){newParagraphElement.remove()}, 3000);
+           // setTimeout(function(){newParagraphElement.remove()}, 3000);
         }
 }
 
