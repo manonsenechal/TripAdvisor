@@ -13,7 +13,7 @@ const message = {
         //modification du contenu 
         messageElement.textContent = messageContent;
         //selection de l'élement dans lequel on veut ajouter le message
-        parentElement.append(messageElement);
+        parentElement.prepend(messageElement);
 
         },
 
